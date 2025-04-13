@@ -28,7 +28,7 @@ export default function Home({}) {
 
   return (
     <div className="">
-      <div className='flex justify-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max'>
+      <div className='flex justify-center items-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max'>
         <Meteors />
         <FloatingUfo></FloatingUfo>
         <NavBar /> 
