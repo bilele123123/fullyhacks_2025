@@ -3,6 +3,9 @@
 // import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer'
+import Hero from './components/Hero'
+import FloatingUfo from './components/FloatingUfo';
 
 
 type TodoItem = {
@@ -23,11 +26,13 @@ export default function Home({}) {
 
   return (
     <div className="">
-      <div className='flex '>
+      <div className='flex flex-col'>
+        <FloatingUfo></FloatingUfo>
         <NavBar /> 
-        
+        <Hero/>
       </div>
-        <h1 className="text-xl font-bold mb-4">Todo List</h1>
+      <div className='h-300 bg-white'></div>
+        <Footer />
 
     </div>
   );
