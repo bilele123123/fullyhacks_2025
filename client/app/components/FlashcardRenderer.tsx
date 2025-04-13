@@ -78,7 +78,7 @@ const FlashcardRenderer = () => {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="bg-blue-600 text-white hover:bg-blue-700 cursor-pointer scroll-smooth transition duration-300 ease-in-out rounded-xl font-semibold shadow mr-5 px-6 py-3"
           disabled={loading}
         >
           {loading ? "Generating..." : "Generate Flashcards"}
