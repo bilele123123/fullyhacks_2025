@@ -14,8 +14,8 @@ const Hero = () => {
             Just input your notes or upload material — and let AI create custom flashcards to boost your study sessions.
           </p>
           <a
-            href="/generate"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
+            href="#generate-form"
+            className="inline-block scroll-smooth transition duration-300 ease-in-out bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700"
           >
             Generate Flashcards
           </a>

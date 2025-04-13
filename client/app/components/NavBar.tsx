@@ -1,7 +1,7 @@
 import Image from 'next/image';
 const NavBar = () => {
     return (
-      <nav className="flex w-[92%] items-center items-center justify-between py-3">
+      <nav className="flex w-[92%] items-center justify-between py-3">
         <div className="flex items-center">
         <Image
   src="/rocket.webp"

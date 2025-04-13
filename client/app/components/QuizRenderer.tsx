@@ -60,6 +60,7 @@ const QuizRenderer = () => {
     <div className="container mx-full p-6">
       <h1 className="text-2xl font-bold mb-4">Generate a Quiz from Notes</h1>
 
+    <div id="generate-form">
       <form onSubmit={handleSubmit} className="mb-8 space-y-4">
         <textarea
           value={notes}
@@ -75,7 +76,7 @@ const QuizRenderer = () => {
           {loading ? "Generating..." : "Generate Quiz"}
         </button>
       </form>
-
+    </div>
       {error && <p className="text-red-500">{error}</p>}
 
       {quiz && (
