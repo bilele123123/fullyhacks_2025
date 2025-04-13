@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="bg-[#0f172a] w-[80%] text-gray-100">
-      <div className="flex flex-row justify-between ">
+    <section className="bg-[#0f172a] w-[80%] text-gray-100 py-10 px-0">
+      <div className="flex flex-col md:flex-row items-center justify-between ">
         {/* Text Content */}
         <div className="max-w-[70%] text-left">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-white">

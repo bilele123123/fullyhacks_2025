@@ -1,14 +1,13 @@
 'use client';
 
-// import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer'
-import Hero from './components/Hero'
+import Footer from './components/Footer';
+import Hero from './components/Hero';
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
 import { Meteors } from './components/ui/meteors';
-
+import ScrollToTopRocket from './components/ScrollToTopRocket';
 
 type TodoItem = {
   id: number;
@@ -16,7 +15,7 @@ type TodoItem = {
   description: string;
 };
 
-export default function Home({}) {
+export default function Home() {
   const [todos, setTodos] = useState<TodoItem[]>([]);
 
   useEffect(() => {
@@ -28,21 +27,29 @@ export default function Home({}) {
 
   return (
     <div className="relative h-fit overflow-hidden">
-      <div className='flex justify-center items-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max'>
+      {/* Top section */}
+      <div className="flex justify-center items-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max">
         <Meteors />
-        <FloatingUfo></FloatingUfo>
-        <NavBar /> 
-        <div className='flex justify-center w-full items-center h-[795]'>
-          <Hero/>
+        <FloatingUfo />
+        <NavBar />
+        <div className="flex justify-center w-full items-center h-[795px]">
+          <Hero />
         </div>
         <QuizRenderer />
       </div>
-      <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
-        <Footer />
 
+      {/* Extra space to allow scroll */}
+      <div className="h-[200px] border-gray-800 bg-gray-900 px-4 py-8 shadow-xl"></div>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Scroll to Top Rocket */}
+      <ScrollToTopRocket />
     </div>
   );
 }
+
 
 
 
