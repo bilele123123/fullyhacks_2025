@@ -8,9 +8,7 @@ import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
 import Loader from "../app/components/Loader";
 import { Meteors } from './components/ui/meteors';
-<<<<<<< HEAD
 import ScrollToTopRocket from './components/ScrollToTopRocket';
-=======
 import FlashcardRenderer from './components/FlashcardRenderer';
 
 type TodoItem = {
