@@ -57,7 +57,7 @@ const QuizRenderer = () => {
   };
 
   return (
-    <div className="container mx-full p-6">
+    <div className="w-[92%] mx-full">
       <h1 className="text-2xl font-bold mb-4">Generate a Quiz from Notes</h1>
 
       <form onSubmit={handleSubmit} className="mb-8 space-y-4">
