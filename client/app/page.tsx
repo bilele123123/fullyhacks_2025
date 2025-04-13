@@ -32,7 +32,7 @@ export default function Home({}) {
         <Meteors />
         <FloatingUfo></FloatingUfo>
         <NavBar /> 
-        <div className='h-[600] flex justify-center w-full items-center mb-24'>
+        <div className='flex justify-center w-full items-center h-[795]'>
           <Hero/>
         </div>
         <QuizRenderer />
