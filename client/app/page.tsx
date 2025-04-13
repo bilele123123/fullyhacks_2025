@@ -6,14 +6,15 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
-import Loader from "../app/components/Loader";
 import { Meteors } from './components/ui/meteors';
 import ScrollToTopRocket from './components/ScrollToTopRocket';
 import FlashcardRenderer from './components/FlashcardRenderer';
+import Loader from "./components/Loader"
 
 export default function Home({}) {
   return (
     <div className="relative h-fit overflow-hidden">
+      <Loader />
       <div className='flex justify-center items-center flex-col bg-gray-900 px-4 py-8 shadow-xl h-max'>
         <Meteors />
         <FloatingUfo />
@@ -27,7 +28,6 @@ export default function Home({}) {
       </div>
       <div className='h-48  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
-        <Loader />
 
     </div>
   );

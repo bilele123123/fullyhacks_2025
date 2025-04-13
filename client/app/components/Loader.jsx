@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AnimatedHeader } from "../components/AnimateHeader";
+import { AnimatedHeader } from "./AnimateHeader";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -62,7 +62,7 @@ const Loader = () => {
           </ul>
         </div>
         <AnimatedHeader
-          headerText={"Quizzit"}
+          headerText={""}
           className={"landing__header landing__header--position fadeInUp"}
         />
       </div>

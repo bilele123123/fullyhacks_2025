@@ -5,7 +5,10 @@ interface AnimatedHeaderProps {
   className?: string; // Optional prop
 }
 
-export const AnimatedHeader: React.FC<AnimatedHeaderProps> = ({ headerText, className }) => {
+export const AnimatedHeader: React.FC<AnimatedHeaderProps> = ({
+  headerText,
+  className,
+}) => {
   let animationDelay = 200;
 
   return (
