@@ -6,13 +6,12 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
+import Loader from "../app/components/Loader";
 import { Meteors } from './components/ui/meteors';
 <<<<<<< HEAD
 import ScrollToTopRocket from './components/ScrollToTopRocket';
 =======
 import FlashcardRenderer from './components/FlashcardRenderer';
-
->>>>>>> edee1b7830cda36539ea5d06f9990ef716b97856
 
 type TodoItem = {
   id: number;
@@ -43,15 +42,9 @@ export default function Home() {
         <QuizRenderer />
         <FlashcardRenderer />
       </div>
+      <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
+        <Footer />
 
-      {/* Extra space to allow scroll */}
-      <div className="h-[200px] border-gray-800 bg-gray-900 px-4 py-8 shadow-xl"></div>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Scroll to Top Rocket */}
-      <ScrollToTopRocket />
     </div>
   );
 }
