@@ -26,6 +26,8 @@ type Quiz = {
 const QuizRenderer = () => {
   const [notes, setNotes] = useState("");
   const [quiz, setQuiz] = useState<Quiz | null>(null);
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
+  const [score, setScore] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -33,7 +35,8 @@ const QuizRenderer = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+    setScore(null);
+    setSelectedAnswers({});
     try {
       const res = await fetch("http://localhost:8000/api/generate-quiz-text/", {
         method: "POST",
@@ -56,11 +59,34 @@ const QuizRenderer = () => {
     }
   };
 
+  const handleOptionSelect = (questionId: number, selectedKey: string) => {
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [questionId]: selectedKey,
+    }));
+  };
+
+  const gradeQuiz = () => {
+    if (!quiz) return;
+
+    let correct = 0;
+
+    quiz.questions.forEach((question) => {
+      const selected = selectedAnswers[question.id];
+      const correctOption = question.options.find((opt) => opt.is_correct);
+
+      if (selected && correctOption?.option_key === selected) {
+        correct += 1;
+      }
+    });
+
+    setScore(correct);
+  };
+
   return (
-    <div className="w-[80%] mx-full">
+    <div id="generate-form" className="w-[80%] mx-auto">
       <h1 className="text-2xl font-bold mb-4">Generate a Quiz from Notes</h1>
 
-    <div id="generate-form">
       <form onSubmit={handleSubmit} className="mb-8 space-y-4">
         <textarea
           value={notes}
@@ -76,7 +102,7 @@ const QuizRenderer = () => {
           {loading ? "Generating..." : "Generate Quiz"}
         </button>
       </form>
-    </div>
+
       {error && <p className="text-red-500">{error}</p>}
 
       {quiz && (
@@ -94,6 +120,8 @@ const QuizRenderer = () => {
                         type="radio"
                         name={`question-${q.id}`}
                         value={opt.option_key}
+                        checked={selectedAnswers[q.id] === opt.option_key}
+                        onChange={() => handleOptionSelect(q.id, opt.option_key)}
                         className="accent-blue-500"
                       />
                       <span>
@@ -105,6 +133,19 @@ const QuizRenderer = () => {
               </ul>
             </div>
           ))}
+
+          <button
+            className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            onClick={gradeQuiz}
+          >
+            Submit Answers
+          </button>
+
+          {score !== null && (
+            <div className="mt-4 text-lg font-semibold text-blue-700">
+              Score: {score} / {quiz.questions.length}
+            </div>
+          )}
         </div>
       )}
     </div>

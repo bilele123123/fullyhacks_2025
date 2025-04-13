@@ -7,7 +7,12 @@ import Hero from './components/Hero';
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
 import { Meteors } from './components/ui/meteors';
+<<<<<<< HEAD
 import ScrollToTopRocket from './components/ScrollToTopRocket';
+=======
+import FlashcardRenderer from './components/FlashcardRenderer';
+
+>>>>>>> edee1b7830cda36539ea5d06f9990ef716b97856
 
 type TodoItem = {
   id: number;
@@ -36,6 +41,7 @@ export default function Home() {
           <Hero />
         </div>
         <QuizRenderer />
+        <FlashcardRenderer />
       </div>
 
       {/* Extra space to allow scroll */}
