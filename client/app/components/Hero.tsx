@@ -1,25 +1,41 @@
+import Image from 'next/image';
+
 const Hero = () => {
-    return (
-      <section className=" border-gray-800 bg-gray-900 shadow-xl text-gray-800 py-20 px-6 sm:px-12 ">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-600">
-            Supercharge Your Studying with AI
+  return (
+    <section className="bg-[#0f172a] w-[80%] text-gray-100 py-10 px-0 sm:px-12">
+      <div className=" mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Text Content */}
+        <div className="max-w-[70%] text-left">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-white">
+            <span className="text-blue-400 uppercase">Supercharge</span> Your Studying with AI
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Our smart flashcard generator helps you learn faster, remember more, and stay focused. 
+          <p className="text-lg sm:text-xl text-gray-300 mb-8">
+            Our smart flashcard generator helps you learn faster, remember more, and stay focused.
             Just input your notes or upload material — and let AI create custom flashcards to boost your study sessions.
           </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="/generate"
-              className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
-            >
-              Generate Flashcards
-            </a>
-          </div>
+          <a
+            href="/generate"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
+          >
+            Generate Flashcards
+          </a>
         </div>
-      </section>
-    );
-  };
-  
-  export default Hero;
+
+        {/* Rocket Image */}
+        <div className="">
+          <Image
+            src="/rocket.webp" // ✅ updated image name
+            alt="Rocket Book Icon"
+            width={250}
+            height={250}
+            className="object-contain drop-shadow-lg"
+            priority
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+

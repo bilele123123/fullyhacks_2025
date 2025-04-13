@@ -28,14 +28,16 @@ export default function Home({}) {
 
   return (
     <div className="">
-      <div className='flex flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl '>
-      <Meteors />
+      <div className='flex justify-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max'>
+        <Meteors />
         <FloatingUfo></FloatingUfo>
         <NavBar /> 
-        <Hero/>
+        <div className='h-[600] flex justify-center w-full items-center'>
+          <Hero/>
+        </div>
         <QuizRenderer />
       </div>
-      <div className='h-300  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
+      <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
 
     </div>
