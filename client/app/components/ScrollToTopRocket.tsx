@@ -46,7 +46,7 @@ const ScrollToTopRocket = () => {
           alt="Scroll to top"
           width={50}
           height={50}
-          className="drop-shadow-lg hover:scale-110 transition-transform"
+          className="drop-shadow-lg hover:scale-110 transition-transform rounded-full"
         />
       </button>
     </div>
