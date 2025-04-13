@@ -18,18 +18,9 @@ type TodoItem = {
 };
 
 export default function Home({}) {
-  const [todos, setTodos] = useState<TodoItem[]>([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/api/todos/')
-      .then((res) => res.json())
-      .then((data) => setTodos(data))
-      .catch((err) => console.error('Failed to fetch todos:', err));
-  }, []);
-
   return (
     <div className="relative h-fit overflow-hidden">
-      <div className='flex justify-center items-center flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl h-max'>
+      <div className='flex justify-center items-center flex-col bg-gray-900 px-4 py-8 shadow-xl h-max'>
         <Meteors />
         <FloatingUfo></FloatingUfo>
         <NavBar /> 
@@ -39,7 +30,7 @@ export default function Home({}) {
         <QuizRenderer />
         <FlashcardRenderer />
       </div>
-      <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
+      <div className='h-48  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
       <Loader />
     </div>
