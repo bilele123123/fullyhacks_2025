@@ -13,8 +13,8 @@ const Hero = () => {
         </p>
 
         <p className="text-3xl sm:text-1xl text-gray-300 mb-8">
-          Our smart flashcard generator helps you learn faster, remember more, and stay focused.
-          Just input your notes or upload material — and let AI create custom flashcards to boost your study sessions.
+          Our smart flashcard and question generator helps you learn faster, remember more, and stay focused.
+          Just input your notes or upload material — and let AI create custom flashcards and questions to boost your study sessions.
         </p>
         <div className="flex justify-center md:justify-start">
           <a
