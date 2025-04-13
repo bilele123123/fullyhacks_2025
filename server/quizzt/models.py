@@ -34,3 +34,19 @@ class QuizOption(models.Model):
     option_key = models.CharField(max_length=1)  # "a", "b", "c", etc.
     option_text = models.TextField()
     is_correct = models.BooleanField(default=False)
+
+
+class FlashcardSet(models.Model):
+    title = models.CharField(max_length=255, default="AI Generated Flashcards")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title 
+
+class Flashcard(models.Model):
+    set = models.ForeignKey(FlashcardSet, related_name="cards", on_delete=models.CASCADE)
+    term = models.TextField()
+    definition = models.TextField()
+
+    def __str__(self):
+        return self.term

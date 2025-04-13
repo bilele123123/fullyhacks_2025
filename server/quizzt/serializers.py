@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import TodoItem
 from .models import User
-from .models import Quiz, QuizQuestion, QuizOption
+from .models import Quiz, QuizQuestion, QuizOption, FlashcardSet, Flashcard
 
 class TodoItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,3 +31,15 @@ class QuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz
         fields = ['id', 'title', 'created_at', 'questions']
+
+class FlashcardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Flashcard
+        fields = ['id', 'term', 'definition']
+
+class FlashcardSetSerializer(serializers.ModelSerializer):
+    cards = FlashcardSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = FlashcardSet
+        fields = ['id', 'title', 'created_at', 'cards']
