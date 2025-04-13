@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-      <section className="bg-white text-gray-800 py-20 px-6 sm:px-12">
+      <section className=" border-gray-800 bg-gray-900 shadow-xl text-gray-800 py-20 px-6 sm:px-12 ">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-600">
             Supercharge Your Studying with AI

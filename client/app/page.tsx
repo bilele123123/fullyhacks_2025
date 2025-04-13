@@ -6,6 +6,8 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import FloatingUfo from './components/FloatingUfo';
+import QuizRenderer from './components/QuizRenderer';
+import { Meteors } from './components/ui/meteors';
 
 
 type TodoItem = {
@@ -26,12 +28,14 @@ export default function Home({}) {
 
   return (
     <div className="">
-      <div className='flex flex-col'>
+      <div className='flex flex-col border border-gray-800 bg-gray-900 px-4 py-8 shadow-xl '>
+      <Meteors />
         <FloatingUfo></FloatingUfo>
         <NavBar /> 
         <Hero/>
+        <QuizRenderer />
       </div>
-      <div className='h-300 bg-white'></div>
+      <div className='h-300  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
 
     </div>
