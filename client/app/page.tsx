@@ -24,6 +24,7 @@ export default function Home({}) {
         <Meteors />
         <FloatingUfo />
         <NavBar />
+        <ScrollToTopRocket />
         <div className="flex justify-center w-full items-center h-[795px]">
           <Hero />
         </div>
@@ -32,6 +33,7 @@ export default function Home({}) {
       </div>
       <div className='h-48  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
+        <Loader />
 
     </div>
   );
