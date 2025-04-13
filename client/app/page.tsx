@@ -7,8 +7,8 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
+import Loader from "../app/components/Loader";
 import { Meteors } from './components/ui/meteors';
-
 
 type TodoItem = {
   id: number;
@@ -39,7 +39,7 @@ export default function Home({}) {
       </div>
       <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />
-
+      <Loader />
     </div>
   );
 }
