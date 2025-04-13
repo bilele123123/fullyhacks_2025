@@ -15,3 +15,22 @@ class User(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     
+class Quiz(models.Model):
+    title = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class QuizQuestion(models.Model):
+    QUESTION_TYPES = (
+        ("multiple_choice", "Multiple Choice"),
+        ("true_false", "True/False"),
+    )
+
+    quiz = models.ForeignKey(Quiz, related_name="questions", on_delete=models.CASCADE)
+    question = models.TextField()
+    question_type = models.CharField(max_length=20, choices=QUESTION_TYPES)
+
+class QuizOption(models.Model):
+    question = models.ForeignKey(QuizQuestion, related_name="options", on_delete=models.CASCADE)
+    option_key = models.CharField(max_length=1)  # "a", "b", "c", etc.
+    option_text = models.TextField()
+    is_correct = models.BooleanField(default=False)
