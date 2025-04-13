@@ -57,7 +57,7 @@ const QuizRenderer = () => {
   };
 
   return (
-    <div className="container mx-full p-6">
+    <div className="w-[80%] mx-full">
       <h1 className="text-2xl font-bold mb-4">Generate a Quiz from Notes</h1>
 
     <div id="generate-form">
