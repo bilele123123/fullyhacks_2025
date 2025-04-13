@@ -54,58 +54,58 @@ class GenerateQuizFromTextView(APIView):
             return Response({"error": "No 'notes' field found in the request body"}, status=400)
 
         prompt = f"""
-You are an educational AI tutor. Based on the notes below, generate a quiz that includes:
-- A total of 10 questions with a mix of true or false and multiple choice questions.
-Important note: You must generate exactly 10 questions. Do not return fewer. If the notes are too short, generate questions based on your general knowledge of the topic in the notes to complete the 10.
+        You are an educational AI tutor. Based on the notes below, generate a quiz that includes:
+        - A total of 10 questions with a mix of true or false and multiple choice questions.
+        Important note: You must generate exactly 10 questions. Do not return fewer. If the notes are too short, generate questions based on your general knowledge of the topic in the notes to complete the 10.
 
-Each question must include:
-- A string field called "question"
-- A string field called "question_type" with values: "multiple_choice" or "true_false"
-- A dictionary called "options" where keys are "a", "b", "c", "d" (or just "a", "b" for true/false)
-- A field called "correct_answer" with the correct option key (e.g., "a")
+        Each question must include:
+        - A string field called "question"
+        - A string field called "question_type" with values: "multiple_choice" or "true_false"
+        - A dictionary called "options" where keys are "a", "b", "c", "d" (or just "a", "b" for true/false)
+        - A field called "correct_answer" with the correct option key (e.g., "a")
 
-Format the final response as JSON in this structure:
-{
-  "quiz": [
-    {
-      "question": "What is the purpose of frontend development?",
-      "question_type": "multiple_choice",
-      "options": {
-        "a": "To handle backend logic",
-        "b": "To manage databases",
-        "c": "To create the visual and interactive parts of an application",
-        "d": "To write deployment scripts"
-      },
-      "correct_answer": "c"
-    },
-    {
-      "question": "True or False: Backend development includes managing the server and database.",
-      "question_type": "true_false",
-      "options": {
-        "a": "True",
-        "b": "False"
-      },
-      "correct_answer": "a"
-    },
-    {
-      "question": "What is middleware in web development?",
-      "question_type": "multiple_choice",
-      "options": {
-        "a": "A database interface",
-        "b": "A type of frontend framework",
-        "c": "Software that connects frontend and backend systems",
-        "d": "A browser plugin"
-      },
-      "correct_answer": "c"
-    }
-  ]
-}
+        Format the final response as JSON in this structure:
+        {{
+        "quiz": [
+            {{
+            "question": "What is the purpose of frontend development?",
+            "question_type": "multiple_choice",
+            "options": {{
+                "a": "To handle backend logic",
+                "b": "To manage databases",
+                "c": "To create the visual and interactive parts of an application",
+                "d": "To write deployment scripts"
+            }},
+            "correct_answer": "c"
+            }},
+            {{
+            "question": "True or False: Backend development includes managing the server and database.",
+            "question_type": "true_false",
+            "options": {{
+                "a": "True",
+                "b": "False"
+            }},
+            "correct_answer": "a"
+            }},
+            {{
+            "question": "What is middleware in web development?",
+            "question_type": "multiple_choice",
+            "options": {{
+                "a": "A database interface",
+                "b": "A type of frontend framework",
+                "c": "Software that connects frontend and backend systems",
+                "d": "A browser plugin"
+            }},
+            "correct_answer": "c"
+            }}
+        ]
+        }}
 
-Only respond with valid JSON. Do not include explanations or intro text.
+        Only respond with valid JSON. Do not include explanations or intro text.
 
-Notes:
-{notes}
-"""
+        Notes:
+        {notes}
+        """
 
         try:
             client = OpenAI(api_key=settings.OPENAI_API_KEY)

@@ -8,6 +8,7 @@ import Hero from './components/Hero'
 import FloatingUfo from './components/FloatingUfo';
 import QuizRenderer from './components/QuizRenderer';
 import { Meteors } from './components/ui/meteors';
+import FlashcardRenderer from './components/FlashcardRenderer';
 
 
 type TodoItem = {
@@ -36,6 +37,7 @@ export default function Home({}) {
           <Hero/>
         </div>
         <QuizRenderer />
+        <FlashcardRenderer />
       </div>
       <div className='h-200  border-gray-800 bg-gray-900 px-4 py-8 shadow-xl'></div>
         <Footer />

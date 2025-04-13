@@ -19,16 +19,17 @@ const Hero = () => {
           </p>
           <a
             href="#generate-form"
-            className="inline-block scroll-smooth transition duration-300 ease-in-out bg-blue-600 text-white px-6 py-3 mr-5 rounded-xl font-semibold shadow hover:bg-blue-700"
-          >
-            Generate Flashcards
-          </a>
-          <a
-            href="#generate-flashcards"
-            className="inline-block scroll-smooth transition duration-300 ease-in-out bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700"
+            className="inline-block scroll-smooth transition duration-300 ease-in-out bg-blue-600 text-white mr-5 px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700"
           >
             Generate Practice Tests
           </a>
+          <a
+            href="#generate-flashcard"
+            className="inline-block scroll-smooth transition duration-300 ease-in-out bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700"
+          >
+            Generate Flashcards
+          </a>
+          
         </div>
 
         {/* Rocket Image */}

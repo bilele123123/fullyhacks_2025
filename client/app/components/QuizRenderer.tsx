@@ -84,10 +84,10 @@ const QuizRenderer = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto">
+    <div id="generate-form" className="w-[80%] mx-auto">
       <h1 className="text-2xl font-bold mb-4">Generate a Quiz from Notes</h1>
 
-      <form onSubmit={handleSubmit} id="generate-form" className="mb-8 space-y-4">
+      <form onSubmit={handleSubmit} className="mb-8 space-y-4">
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
